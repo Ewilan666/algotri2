@@ -1,0 +1,23 @@
+from random import randint
+
+lol=[[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0]]
+
+def Affichage(liste):
+  print("    1 2 3 4 5 6 7 8")
+  print("   ________________")
+  for ligne in range(0,8):
+    print(ligne+1, end=" | ")
+    for colonne in range(0,8):
+      print(liste[ligne][colonne], end=" ")
+    print("")
+
+Affichage(lol)
+nbrBombe=0
+while(nbrBombe<10):
+  ligne= randint(0,7)
+  colonne= randint(0,7)
+  if(lol[ligne][colonne] != '1'):
+    lol[ligne][colonne] = '1'
+    nbrBombe=nbrBombe+1 #nbrBombe+=1
+Affichage(lol)
+
